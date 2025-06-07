@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 import { NextResponse } from 'next/server'
 
-export async function GET(_: Request, context: { params: { id: string } }) {
+export async function GET(_: Request, context: any) {
   const id = parseInt(context.params.id)
   const medicamento = await prisma.medicamento.findUnique({
     where: { id },
@@ -15,7 +15,7 @@ export async function GET(_: Request, context: { params: { id: string } }) {
   return NextResponse.json(medicamento)
 }
 
-export async function PUT(req: Request, context: { params: { id: string } }) {
+export async function PUT(req: Request, context: any) {
   const id = parseInt(context.params.id)
   const data = await req.json()
 
@@ -27,7 +27,7 @@ export async function PUT(req: Request, context: { params: { id: string } }) {
   return NextResponse.json(actualizado)
 }
 
-export async function DELETE(_: Request, context: { params: { id: string } }) {
+export async function DELETE(_: Request, context: any) {
   const id = parseInt(context.params.id)
 
   const eliminado = await prisma.medicamento.delete({
