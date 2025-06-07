@@ -2,10 +2,16 @@
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
+type Categoria = {
+  id: number
+  nombre: string
+}
+
+
 export default function EditarMedicamento() {
   const { id } = useParams()
   const router = useRouter()
-  const [categorias, setCategorias] = useState([])
+  const [categorias, setCategorias] = useState<Categoria[]>([])
   const [loading, setLoading] = useState(true)
   const [formErrors, setFormErrors] = useState<Record<string, string>>({})
   const [notFound, setNotFound] = useState(false)
@@ -214,7 +220,7 @@ export default function EditarMedicamento() {
               value={medicamento.categoriaId}
             >
               <option value="">Seleccione una categoría</option>
-              {categorias.map((c: any) => (
+              {categorias.map((c: Categoria) => (
                 <option key={c.id} value={c.id}>{c.nombre}</option>
               ))}
             </select>

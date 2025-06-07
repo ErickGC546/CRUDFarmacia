@@ -1,10 +1,14 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+type Categoria = {
+  id: number
+  nombre: string
+}
 
 export default function NuevoMedicamento() {
   const router = useRouter()
-  const [categorias, setCategorias] = useState([])
+  const [categorias, setCategorias] = useState<Categoria[]>([])
   const [med, setMed] = useState({
     nombre: '',
     precio: '',
@@ -30,7 +34,6 @@ export default function NuevoMedicamento() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setMed({ ...med, [name]: value })
-    // Limpiar error cuando el usuario escribe
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }))
     }
@@ -159,7 +162,7 @@ export default function NuevoMedicamento() {
               value={med.categoriaId}
             >
               <option value="">Seleccione una categoría</option>
-              {categorias.map((c: any) => (
+              {categorias.map((c: Categoria) => (
                 <option key={c.id} value={c.id}>{c.nombre}</option>
               ))}
             </select>
