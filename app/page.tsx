@@ -3,7 +3,6 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-white rounded-xl shadow-md overflow-hidden">
         <div className="p-8 md:p-12">
-          {/* Encabezado simple */}
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
               <span className="text-indigo-600">Gestión Farmacéutica</span>
@@ -45,7 +44,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Tarjeta Categorías */}
             <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition">
               <div className="flex items-center mb-4">
                 <div className="bg-purple-100 p-2 rounded-full mr-4">

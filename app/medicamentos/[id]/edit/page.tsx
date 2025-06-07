@@ -21,14 +21,12 @@ export default function EditarMedicamento() {
     const fetchData = async () => {
       try {
         setLoading(true)
-        
-        // Cargar categorías
+
         const catResponse = await fetch('/api/categorias')
         if (!catResponse.ok) throw new Error('Error al cargar categorías')
         const catData = await catResponse.json()
         setCategorias(catData)
         
-        // Cargar medicamento
         const medResponse = await fetch(`/api/medicamentos/${id}`)
         if (!medResponse.ok) {
           if (medResponse.status === 404) {
@@ -59,7 +57,6 @@ export default function EditarMedicamento() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setMedicamento({ ...medicamento, [name]: value })
-    // Limpiar error al modificar
     if (formErrors[name]) {
       setFormErrors(prev => ({ ...prev, [name]: '' }))
     }
@@ -101,7 +98,7 @@ export default function EditarMedicamento() {
       if (!response.ok) throw new Error('Error al actualizar medicamento')
 
       router.push('/medicamentos')
-      router.refresh() // Para actualizar la lista
+      router.refresh() 
     } catch (error) {
       console.error('Error:', error)
       alert('Ocurrió un error al actualizar el medicamento')
