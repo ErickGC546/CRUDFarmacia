@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 import { NextResponse } from 'next/server'
 
-export async function GET(_: Request, context: { params: { id: string } }) {
+export async function GET(_: Request, context: any) {
   const id = parseInt(context.params.id)
 
   const categoria = await prisma.categoria.findUnique({
