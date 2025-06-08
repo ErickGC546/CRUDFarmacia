@@ -41,3 +41,5 @@ npx prisma generate
 npm run dev
 ```
 Abre http://localhost:3000 en tu navegador para ver la app.
+
+Desplegado en Vercel: https://crud-farmacia.vercel.app/
