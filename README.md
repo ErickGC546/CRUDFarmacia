@@ -6,7 +6,7 @@ Aplicación web construida con Next.js para la gestión de medicamentos y catego
 
 - [Next.js 15](https://nextjs.org/) – Framework React para aplicaciones web.
 - [Prisma ORM](https://www.prisma.io/) – ORM moderno para acceso a bases de datos.
-- [SQLite/PostgreSQL](https://www.prisma.io/docs/concepts/database-connectors) – Base de datos (local o remota).
+- [Mysql](https://www.prisma.io/docs/concepts/database-connectors) – Base de datos (local o remota).
 - [TailwindCSS](https://tailwindcss.com/) – Utilidad para estilos rápidos (si se utiliza).
 - [Vercel](https://vercel.com/) – Plataforma de despliegue.
 
